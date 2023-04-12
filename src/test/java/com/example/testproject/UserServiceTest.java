@@ -48,7 +48,7 @@ public class UserServiceTest {
 		user.setAbout("I am doctor");
 		
 
-		Mockito.when(userRepository.save(user)).thenReturn(cmn);
+		Mockito.when(userRepository.save(user)).thenReturn(user);
 		Assert.assertEquals(Messages.SUCCESS_MSG,cmn.getMessage());
 		Assert.assertEquals(Constants.SUCCESS_CD, cmn.getStatusCode());
 
