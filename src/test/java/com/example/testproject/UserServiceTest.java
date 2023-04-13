@@ -11,6 +11,7 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.example.testproject.entities.UserEntity;
@@ -20,20 +21,20 @@ import com.example.testproject.service.UserService;
 import com.example.testproject.utils.Constants;
 import com.example.testproject.utils.Messages;
 
+
 @ExtendWith(MockitoExtension.class)
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class UserServiceTest {
 
-	@Autowired
+	@MockBean
 	private UserRepository userRepository;
 
 	@Autowired
 	private UserService userService;
 
 	@Test
-	@Order(1)
 	public void saveUserTest() {
 
 		UserEntity user = new UserEntity();;

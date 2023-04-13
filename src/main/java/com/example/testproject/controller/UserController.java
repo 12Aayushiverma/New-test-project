@@ -30,7 +30,7 @@ public class UserController {
     private UserService userService;
     
 
-    private final static Logger log = LoggerFactory.getLogger(UserController.class);
+    private static  final Logger log = LoggerFactory.getLogger(UserController.class);
 
 
     @PostMapping

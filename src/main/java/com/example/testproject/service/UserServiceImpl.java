@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService {
 	   
 
 	   
-	    private final static Logger log = LoggerFactory.getLogger(UserServiceImpl.class);
+	    private  static final Logger log = LoggerFactory.getLogger(UserServiceImpl.class);
 	    @Override
 	    public CommonResponse saveUser(UserEntity user) {
 	        log.info("UserServiceImpl::saveUser::Start");

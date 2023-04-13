@@ -2,19 +2,19 @@ package com.example.testproject;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
 import org.mockito.Mockito;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
 import com.example.testproject.controller.UserController;
 import com.example.testproject.entities.UserEntity;
 import com.example.testproject.modal.response.CommonResponse;
@@ -24,19 +24,20 @@ import com.example.testproject.utils.Messages;
 
 
 
+
+@ExtendWith(MockitoExtension.class)
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class UserControllerTest {
 
-	@Autowired
+	@Mock
 	private UserService userService;
 
 	@Autowired
 	private UserController userController;
 
 	@Test
-	@Order(1)
 	public void createUserTest() {
 		CommonResponse cmn = new CommonResponse();
 		cmn.setMessage(Messages.SUCCESS_MSG);
@@ -57,7 +58,6 @@ public class UserControllerTest {
 	}
 
 	@Test
-	@Order(2)
 	public void getUserTest() {
 
 		CommonResponse cmn = new CommonResponse();
@@ -75,7 +75,6 @@ public class UserControllerTest {
 	}
 
 	@Test
-	@Order(3)
 	public void getAllUserTest() {
 		CommonResponse cmn = new CommonResponse();
 		List<UserEntity> userList = new ArrayList<>();

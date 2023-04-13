@@ -5,7 +5,8 @@
   
   @SpringBootTest class TestProjectApplicationTests {
   
-  @Test void contextLoads() { }
+  @Test
+  void contextLoads() { }
   
   }
  
